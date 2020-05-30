@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create</title>
+    <script type="text/javascript" src="./bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha256-ZT4HPpdCOt2lvDkXokHuhJfdOKSPFLzeAJik5U/Q+l4=" crossorigin="anonymous" />
+    <link href="//cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">
+    <link href="./all.css" rel="stylesheet">
+
+
+</head>
+<body data-title="article-review">
+
+
+    <div class="container theme-showcase" id="main" >
+
+
+        <div class="starter-template">
+            <h1>Review</h1>
+        </div>
+
+        <div id="alerts"></div>
+
+        <ul class="nav nav-tabs">
+            <li id="reviewTab" class="active"><a href="#">Review</a></li>
+            <li id="votingTab"><a href="#">Vote</a></li>
+        </ul>
+
+        <div id="editor-container"></div>
+        <hr>
+
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" id="reviewButton">Get a Review</button>
+        </div>
+        <hr>
+
+        <div class="col-md-12">
+            <button type="button" class="btn btn-danger" id="rejectButton">Reject</button>
+            <button type="button" class="btn btn-warning" id="proposeChangesButton">Propose Changes</button>
+            <button type="button" class="btn btn-success" id="acceptButton">Accept</button>
+            <button type="button" class="btn btn-success" id="testRendering">Test Rendering</button>
+        </div>
+
+        <div>
+            <form>
+                <input type="text" id="hashInput" name="hashInput">
+            </form>
+        </div>
+
+
+
+
+        <div id="stickyNav" class="stickyNav" data-spy="affix" data-offset-top="7">
+            <a href="#" id="stickyProposals">My Proposals</a>
+        </div>
+
+
+    </div><!--/.container -->
+
+    <div id="proposalSidebar" class="sidebar">
+        <div>
+            <a href="javascript:void(0)" class="closebtn" id="proposalSidebarCloseButton"><<</a>
+            <button type="button" class="btn btn-warning" id="submitProposalsButton">Submit Proposals</button>
+        </div>
+
+    </div>
+
+    <div id="votingSidebar" class="sidebar">
+        <div>
+            <a href="javascript:void(0)" class="closebtn" id="votingSidebarCloseButton">X</a>
+            <button type="button" class="btn btn-warning" id="voteSubmitButton">Vote</button>
+            <div id="voteSummary"></div>
+        </div>
+
+    </div>
+
+    <div class="popover" id="changePopover" style="display:none;">
+        <button type="button" class="btn btn-success" id="proposeToReplaceButton">Replace This</button>
+        <button type="button" class="btn btn-success" id="proposeToRemoveButton">Remove This</button>
+        <div class="proposalClose"> x </div>
+    </div>
+
+    <div class="popover" id="addPopover" style="display:none;">
+        <button type="button" class="btn btn-success" id="proposeToAddButton">Add Content Here</button>
+        <div class="proposalClose"> x </div>
+    </div>
+
+</body>
